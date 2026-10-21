@@ -12,6 +12,7 @@
     6. Antibiotic Dosage: Input (From literature reviews)
     7. Death probability: Output
 2. CARD for intrinsic mutations and pull antibiotic dosages from literature review
+  - classes of different kinds of AB dosages: initial dose only, pulsing doses (timesteps), 
 3. Output graphs
 
 4. TBD (in interest of time)
