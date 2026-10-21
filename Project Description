@@ -1,7 +1,24 @@
 ### Project Outline ###
-1. Simulate bacterial culture: Gillespiel algorithm
+1. Simulate bacterial culture: Binned Gillespie algorithm
   - simulate mutations, growth, and death of culture
   - take into account different antibiotics and corresponding reactions to it
+  - Model parameters:
+    1. Mutation Effect: Parameter (from lit review): Poisson Distribution
+    2. Initial Population: Input (limit for initial simulations)
+    3. Population Capacity: Cap based on amount of runs (Bellman-Ford: |V|-1 runs)
+    4. Mutation Probabilty: Output (Simulate based on different rules and output prob of each mutation being calculated)
+    5. Simulation cycles: Output (how many cycles it took to reach complete saturation)
+      - simulate cycles as an input for n runs of same culture (no of cultures with same parameters) and output distribution of mutations within that for a more even view/sample size != 1
+    6. Antibiotic Dosage: Input (From literature reviews)
+    7. Death probability: Output
 2. CARD for intrinsic mutations and pull antibiotic dosages from literature review
+3. Output graphs
 
-3. TBD (in interest of time)
+4. TBD (in interest of time)
+- Percentage of bins that became extinct and grew into larger groups
+
+
+
+Start with:
+1. Bacteria: Staphyloccocus aureus; Antibiotics: beta-lactams, fluoroqinones, tetracyclines
+2. Bacteria: Mycobacterium Tuberculosis; Antibiotics:
