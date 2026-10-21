@@ -1,1 +1,7 @@
+### Project Outline ###
+1. Simulate bacterial culture: Gillespiel algorithm
+  - simulate mutations, growth, and death of culture
+  - take into account different antibiotics and corresponding reactions to it
+2. CARD for intrinsic mutations and pull antibiotic dosages from literature review
 
+3. TBD (in interest of time)
