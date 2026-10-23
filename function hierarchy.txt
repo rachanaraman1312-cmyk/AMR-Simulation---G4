@@ -8,8 +8,6 @@ CLASSES
 
 
 FUNCTION CALL STRUCTURE 
-Call structure
---------------
 main
   run_replicates (n runs)
     run_simulation (one run, loops over steps)
