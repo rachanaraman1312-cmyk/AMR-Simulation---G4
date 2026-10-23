@@ -1,0 +1,22 @@
+AMR SIMULATOR 
+
+CLASSES 
+  Bin
+  Antibiotic
+  DosingSchedule 
+  SimulationParams 
+
+
+FUNCTION CALL STRUCTURE 
+main
+  run_replicates (n runs)
+    run_simulation (one run, loops over steps)
+      create_bins
+      get_dose
+      growth_step (one step)
+        count_update
+        mutation_uptake   (needs the number of sensitive cells that divided)
+        update_bins
+  dose_induction (for graph 3)
+    run_replicates (once per dose)
+  output_1, output_2, output_3, render_video (only receive results)
