@@ -8,6 +8,8 @@ CLASSES
 
 
 FUNCTION CALL STRUCTURE 
+Call structure
+--------------
 main
   run_replicates (n runs)
     run_simulation (one run, loops over steps)
@@ -17,6 +19,9 @@ main
         count_update
         mutation_uptake   (needs the number of sensitive cells that divided)
         update_bins
-  dose_induction (for graph 3)
+  dose_sweep (for graph 3)
     run_replicates (once per dose)
-  output_1, output_2, output_3, render_video (only receive results)
+  graph_1(results)         called by main, receives results from run_replicates
+  run_summary(results)     called by main, receives results from run_replicates
+  graph_3(sweep_results)   called by main, receives results from dose_sweep
+  render_video(history)    called by main, receives one run's history
