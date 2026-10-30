@@ -1,0 +1,5 @@
+#once a mutation is developed it cannot develop another mutation
+#input for dosages: initial (first) dose, % increase for each run 
+#as a consequence of each cell being locked into one mutation, weaker mutations outcompete strong mutations
+#bins - leave out the concept for now 
+#introduce a limit for how much it can grow (like the cells), and introduce this limit only if the runtime is too long 
