@@ -1,0 +1,37 @@
+# CELLS DO NOT MOVE
+# start with single colony
+# mutation, division, and death, resistance
+## Division:
+# if its a single bacteria it divides
+# if 2 are of the same type, they divide
+# Cell and Colonies as Object
+    # Index (int)
+    # Health of cell: Alive or Dead
+    # Resistance: Scale (float): 0 Not resistant, 0.5 Moderately/Developing Resistance, 1 Resistant
+    # Colony member: str
+    # Position (if needed later) or relative distance between cells (threshold dist)
+    # 
+    # Function: resistance to what dosage?: input (index, dosage of resistance)
+    #
+
+    # Rules for existence:   
+    # 1. If cells are alive and not resistant, they die when antibiotic introduced (except for a few random cells (5-10% of colony size picked randomly))
+    # 2. If alive and moderately/completely resistant, dosage matters (high dosages kills moderately resistant cells)
+    # 3. If cells are dead, they are dead
+
+    # Rules for Mutation (mutation development):
+    # 1. Cells have Inherent or Acquired mutation within Mutation class (0 or 1 resp) which is randomised within cells in a colony. If a cell has Inherent mutation; probability of developing a mutation becomes higher (prob of mutation jumps up by a certain amount)
+    # 2. Cells have prob of A mutation
+    # 3. Prob of developing stronger mutation higher
+
+    # Rules for competing mutations: 
+    # 1. Mutation rate: probability
+    # 2. If a strong and weak mutation colony are next to each other: lit review
+    
+
+    # Rules for Division:
+    # 1. Prob of child inheriting parent mutation is higher
+    # 2. If there is no space around it (min 1px worth), it cant divide
+
+
+    # Initialization func: if single colony, need to randomize Inherent or acquired mutation for each cell and also randomize cells that exist after first dose of antibiotic. Within bins, randomly assign higher probability to cells (higher chance of mutation developing inherently in the beginning few hours)
