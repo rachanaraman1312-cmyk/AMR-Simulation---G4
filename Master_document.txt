@@ -3,7 +3,6 @@ References: Env_and_rules, function_hierarchy
 
 Final list of classes/objects:
 1. Cell
-2. Colony
 3. Mutation 
 4. Antibiotic
 5. Dosing Schedule 
