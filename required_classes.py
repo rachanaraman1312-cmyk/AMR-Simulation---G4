@@ -35,13 +35,15 @@ class Antibiotic:
     """
     
 class DosingSchedule:
-    """How the antibiotic dose changes over time.
-    Ideally, dosages should be compunded. 
+    """consider that the antibiotic dose rises over time.
+
+    The dose is given at every step and grows by a fixed percentage each step, compounded.
+
     Attributes:
-        initial_dose (float): Dose given first.
-        pct_increase (float): Percentage added to the dose at each
-            increase, e.g. 10 means each dose is 10% higher than the last.
-        max (float): Optional upper limit on the dose.
+        initial_dose (float): Dose at step 0.
+        pct_increase (float): Percentage added at each step. 10 means every
+            dose is 10% higher than the one before.
+        max_dose (float | None): Optional upper limit on the dose.
     """
 
 class Cell:
