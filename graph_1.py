@@ -1,4 +1,5 @@
-def output_1(results: list):
+import matplotlib.pyplot as plt
+def graph_1(results: list):
 """ 
 first output graph plots the number of resistant as a function of time for each independent run 
 
