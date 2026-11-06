@@ -1,14 +1,16 @@
+import random
 def mutation_uptake(mutation_prob: float, dividing_sensitive: float):
-  """
-  use random function random.binomialvariate(): 
-    assign a random number of cells in the sensitive + dividing group to take up mutations 
+  """Determines how many dividing sensitive cells acquire resistance this step.
 
-  Args:
-    mutation_prob: fixed probability assigned for each antiobiotic - organism pair from literature 
-    dividing_sensitive: draw number of dividing cells in the sensitive bin 
+    Package to use: random.binomialvariate (Python 3.12+)
 
-  Returns:
-    number of cells moving to the resistant bin
+    Args:
+        mutation_prob: Fixed per-division mutation probability for the
+            antibiotic-organism pair, taken from the literature.
+        dividing_sensitive: Number of cells in the sensitive bin that
+            divided this step.
 
-  """
-  pass
+    Returns:
+        Number of cells moving from the sensitive bin to the resistant bin.
+    """
+    return random.binomialvariate(dividing_sensitive, mutation_prob)
