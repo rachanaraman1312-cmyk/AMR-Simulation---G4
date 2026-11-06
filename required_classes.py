@@ -1,49 +1,46 @@
-class Bin:
-  """ group of bacteria with the same properties
-
-      features:
-      type: 0 -> sensitive, 1 -> resistant 
-      cells: number of cells in the bin 
-      MIC: how resistant the bin is 
-  """
-
 class SimulationParams:
-  """
-  parameters that need constant updation for growth simulation 
-  
-  features:
-    tau           size of one time step
-        max_steps     step limit for one run
-        n_replicates  how many times each case is repeated
-        threshold     resistant fraction that counts as "resistant" (0.9)
-        capacity      carrying capacity of the culture
-        mutation_prob chance a dividing sensitive cell becomes resistant
-                      (fixed value from the literature review)
-        max_kill      highest drug kill rate (Hill equation)
-        h             steepness of the dose-response curve (Hill equation)
-  """
+    """
+    Attributes:
+        tau (float): Size of one time step (e.g. hours).
+        max_steps (int): Step limit for one run. A run that hits it
+            without reaching the threshold is recorded as "max_steps".
+        n_replicates (int): How many times each case is repeated.
+        threshold (float): Resistant fraction of the living culture at
+            which a run stops and counts as resistant. Default 0.9.
+        capacity (int): Carrying capacity of the culture. Divisions are
+            limited so the total does not exceed it.
+    """
+
 
 class Antibiotic:
-"""
-  parameters of the drug 
+    """
+    Attributes:
+        name (str): Name of the drug.
+        drug_class (str): Pharmaceutical class.
+        mic (float): Minimum inhibitory concentration from the literature,
+            in the same units as the doses. Marked on output_3.
+        mutation_prob (float): Chance that a dividing sensitive cell
+            becomes resistant. Fixed value for this antibiotic-organism
+            pair, from the literature review.
+        max_kill (float): Highest kill rate the drug can reach (Hill
+            equation).
+        h (float): Steepness of the dose-response curve (Hill equation).
+        ec50 (float): Dose giving half of max_kill (Hill equation).
+    """
 
-  features:
-    name: name of drug
-    drug_class: pharmaceutical class
-    max_kill: outcome of Hill equation 
-    decay: see DosingSchedule class features 
 
-  """
 class DosingSchedule:
-"""
-The settings that define how the antibiotic dose changes over time.
+    """
+    Attributes:
+        type (str): "fixed", "incremental" or "pulsed".
+        level (float): The dose (fixed), or the full dose at each pulse
+            (pulsed).
+        start (float): Starting dose (incremental only).
+        increase (float): Amount added per step (incremental only).
+        max (float): Upper limit on the dose (incremental only).
+        interval (int): Steps between pulses (pulsed only).
+        decay (float): Fraction of the dose left after each step (pulsed
+            only).
+    """
 
-    features:
-        type: "fixed", "incremental" or "pulsed"
-        level: the dose (fixed), or the full dose at each pulse (pulsed)
-        start: starting dose (incremental only)
-        increase: amount added per step (incremental only)
-        max: upper limit on the dose (incremental only)
-        interval: steps between pulses (pulsed only)
-        decay: fraction of the dose left after each step (pulsed only)
-  """
+class 
