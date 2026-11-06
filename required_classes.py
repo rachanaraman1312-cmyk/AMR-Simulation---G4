@@ -1,14 +1,24 @@
 class SimulationParams:
-    """
+    """Settings that control one growth simulation.
+
     Attributes:
-        tau (float): Size of one time step (e.g. hours).
-        max_steps (int): Step limit for one run. A run that hits it
-            without reaching the threshold is recorded as "max_steps".
-        n_replicates (int): How many times each case is repeated.
-        threshold (float): Resistant fraction of the living culture at
-            which a run stops and counts as resistant. Default 0.9.
-        capacity (int): Carrying capacity of the culture. Divisions are
-            limited so the total does not exceed it.
+        t (float): Size of one time step.
+        max_steps/population_limit (int/float): Step limit for one run.
+        n_replicates (int): Repeats of each case.
+        threshold (float): Fraction of living cells that must carry a
+            mutation of full strength (1.0) for the run to stop. Default 0.9.
+        grid_size (int): Width and height of the grid in pixels.
+        initial_cells (int): Size of the starting colony.
+        base_division_prob (float): Division probability of a cell with no
+            mutation.
+        cost_per_strength (float): Division penalty per unit of mutation
+            strength. This decides how strongly weak mutants
+            outcompete strong ones.
+        mutation_rate (float): Probability that a dividing mutation-free
+            cell gains a mutation.
+        early_phase_hours (float): Window with a raised mutation rate.
+        survivor_fraction (float): Share of the colony that survives the
+            first dose by chance (0.05 to 0.10).
     """
 
 
