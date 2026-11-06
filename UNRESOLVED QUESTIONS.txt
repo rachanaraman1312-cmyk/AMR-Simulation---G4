@@ -1,3 +1,0 @@
-Idea 1: videos can be rendered at the beginning and ending of each run
-should subclasses be created for incremental and pulsing doses?
-How to parallelize this? (discuss potential approaches and decide on one)
