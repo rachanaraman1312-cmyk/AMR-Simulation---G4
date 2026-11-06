@@ -1,20 +1,21 @@
-def run_simulation(initial: tuple, schedule, params) -> dict:
-    """Run one simulation until the culture is mostly resistant (proposed threshold: 90% of cells are resistant).
+def run_simulation(schedule: DosingSchedule, params: SimulationParams, antibiotic: Antibiotic) -> RunResult:
+    """Run one simulation until the culture is mostly resistant.
 
-    Steps through growth until resistant cells make up at least
-    params.resistant_threshold (default 0.9) of the living culture. Stops
-    early if the culture goes extinct (no cells remain), or at params.max_steps.
+    Builds a single starting colony, randomising inherent vs acquired
+    mutation for each cell. Then, at every step: get the dose, call
+    growth_step, and check the stop rule. Stops when resistant cells are at
+    least params.threshold (0.9) of the living cells, when no cells are
+    alive, or at params.max_steps.
+    This max_step limit can be capped on the basis of population. 
 
     Args:
-        initial: Starting state as (starting population, initial resistant
-            fraction).
         schedule: DosingSchedule giving the dose at each step.
-        params: SimulationParams (resistant_threshold, max_steps, and the
-            growth and mutation settings).
+        params: SimulationParams.
+        antibiotic: Antibiotic properties.
 
     Returns:
-        Dict with the per-step history, the step at which the threshold was
-        reached (None if it never was), and the stop reason: "threshold",
-        "extinct", or "max_steps".
+        RunResult with the per-step history (counts and cell positions),
+        the outcome ("threshold", "extinct" or "max_steps"), and the step
+        at which the threshold was reached (None if never).
     """
 pass
