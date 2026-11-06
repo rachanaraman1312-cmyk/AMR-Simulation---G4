@@ -1,22 +1,22 @@
-def run_replicates(n: int, initial: tuple, schedule, params):
+import random
 
-"""Run run_simulation n times, each independent of the others.
+def run_replicates(n: int, schedule: DosingSchedule,params: SimulationParams, antibiotic: Antibiotic) -> list:
+    """Run run_simulation n times, each independent of the others.
 
-    Every run starts from the same initial state and uses its own random
-    draws, so results differ between runs. Runs stop at different steps
-    because each ends when the culture is at least 90% resistant (or goes
-    extinct, or hits max_steps).
+    Every run builds its own starting colony from params and gets its own
+    random seed, so runs differ and none can affect another. Runs stop at
+    different steps, because each ends when resistant cells reach the
+    threshold, the culture goes extinct, or max_steps is hit.
 
     Args:
         n: Number of independent runs.
-        initial: Starting state as (starting population, initial resistant
-            fraction). Not modified by the runs.
         schedule: DosingSchedule giving the dose at each step.
-        params: SimulationParams (simulation settings).
+        params: SimulationParams (starting colony size, threshold,
+            max_steps, and growth and mutation settings).
+        antibiotic: Antibiotic properties.
 
     Returns:
-        List of n run_simulation results, one per run, with differing
-        lengths.
+        List of n result objects, one per run.
     """
-pass
 
+pass
