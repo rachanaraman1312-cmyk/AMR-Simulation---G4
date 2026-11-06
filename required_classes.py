@@ -26,7 +26,7 @@ class Antibiotic:
     
 class DosingSchedule:
     """How the antibiotic dose changes over time.
-
+    Ideally, dosages should be compunded. 
     Attributes:
         initial_dose (float): Dose given first.
         pct_increase (float): Percentage added to the dose at each
