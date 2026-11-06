@@ -1,5 +1,5 @@
 import matplotlib.pyplot as plt
-def graph_3(dose_results: list, mic: float, path: str = "output_3.png") -> None:
+def graph_2(dose_results: list, mic: float, path: str = "output_3.png") -> None:
     """ Plot resistant fraction against dose, with the MIC marked.
 
     Each point is one dose from dose_sweep: the dose is on the x-axis and
