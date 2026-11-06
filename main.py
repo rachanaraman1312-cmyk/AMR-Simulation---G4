@@ -3,11 +3,11 @@ def main():
     Run everything. Takes no arguments.
 
     Cases:
-    with reference to bin size,
-    Case 1: sensitive bin = resistant bin
-    Case 2: sensitive bin > resistant bin 
-    Case 3: sensitive bin < resistant bin
+    with reference to number of cells
+    Case 1: sensitive cells = resistant cells
+    Case 2: sensitive cells > resistant cells 
+    Case 3: sensitive cells < resistant cells
     
-    For each of the three cases: call run_replicates(), dose_induction(), all output functions, and 
-    render one video (most likely the limiting step)
+    For each of the three cases: call run_replicates(), get_dose(), all output functions.
     """
+pass
