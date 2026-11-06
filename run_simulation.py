@@ -1,21 +1,20 @@
-def run_simulation(total_cells: int, resistant_fraction: float, schedule: DosingSchedule, params):
-"""
-this function runs one simulation from start to finish. 
+def run_simulation(initial: tuple, schedule, params) -> dict:
+    """Run one simulation until the culture is mostly resistant (proposed threshold: 90% of cells are resistant).
 
-steps:
-  1. call create_bins() -> establishes initial population'
-  2. until the population limit is reached, call these sequentially: get_dose(), growth_step():
-     save these results: current step number, dose, sensitive and resistant count
-  3. checkpoints:
-      (i) total_cells_current >= population_limit -> STOP
-      (ii) total_cells == 0 -> EDGE CASE, STOP
-      (iii) is the population resistant? resistant_cells / total_cells_current >= threshold -> RESISTANT
-  4. Build the snapshot, call render_video()
+    Steps through growth until resistant cells make up at least
+    params.resistant_threshold (default 0.9) of the living culture. Stops
+    early if the culture goes extinct (no cells remain), or at params.max_steps.
 
-  Returns:
-  1. history: list of outputs - step, dose, sensitive, resistant 
-  2. outcome: based on checkpoints in step 3
-  3. snapshot: visual depiction of culture at stopping step
+    Args:
+        initial: Starting state as (starting population, initial resistant
+            fraction).
+        schedule: DosingSchedule giving the dose at each step.
+        params: SimulationParams (resistant_threshold, max_steps, and the
+            growth and mutation settings).
 
-"""
+    Returns:
+        Dict with the per-step history, the step at which the threshold was
+        reached (None if it never was), and the stop reason: "threshold",
+        "extinct", or "max_steps".
+    """
 pass
