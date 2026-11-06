@@ -1,22 +1,14 @@
 import random
-def count_update(n_sensitive: int, n_resistant: int, death_probs: tuple, divide_probs: tuple) -> dict:
-    """Draw how many sensitive and resistant cells die and divide this step.
-
-    Use random.binomialvariate for each group.
+def count_update(cells: list, n_sensitive_divided: int) -> dict:
+    """Record the colony's state for the current step.
 
     Args:
-        n_sensitive: Current number of sensitive cells.
-        n_resistant: Current number of resistant cells.
-        death_probs: (sensitive, resistant) probability of dying this step,
-            set by the current dose.
-        divide_probs: (sensitive, resistant) probability of dividing this
-            step.
+        cells: Current list of Cell objects.
+        n_sensitive_divided: Sensitive cells that divided this step.
 
     Returns:
-        Dict with the number of sensitive and resistant cells that died and
-        that divided. The sensitive-divided count is passed to
-        mutation_uptake.
+        Dict with alive and dead counts, cells at each resistance level (0, 0.5, 1), the resistant fraction of living cells, and
+        n_sensitive_divided.
     """
-
-
+    
 pass
