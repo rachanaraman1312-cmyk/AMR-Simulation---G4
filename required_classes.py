@@ -47,14 +47,14 @@ class Cell:
 
 
 class Mutation:
-    """A resistance-conferring mutation carried by a cell.
+    """A resistance-conferring mutation. A cell carries at most one.
 
     Attributes:
-        origin (int): 0 for inherent, 1 for acquired. Inherent mutations
-            raise the cell's probability of developing further mutations.
-        strength (float): How much resistance the mutation adds. Stronger
-            mutations are more likely to develop in cells that already
-            carry one.
-        rate (float): Probability that a dividing cell acquires this
-            mutation, from the literature review.
+        origin (int): 0 for inherent, 1 for acquired.
+        strength (float): Resistance the mutation gives (0.5 moderate,
+            1.0 full).
+        division_penalty (float): Fraction by which the mutation slows
+            division. Equals params.cost_per_strength * strength, so
+            stronger mutations are costlier.
     """
+
