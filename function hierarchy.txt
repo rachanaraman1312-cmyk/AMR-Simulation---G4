@@ -12,7 +12,7 @@ FUNCTION CALL STRUCTURE
 main
   run_replicates (n runs)
     run_simulation (one run, loops until stop)
-      dosage_induction (dose for this step)
+      get_dose (dose for this step)
       growth_step (death, division, placement)
         count_update
         mutation_uptake
