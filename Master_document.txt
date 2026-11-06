@@ -13,7 +13,7 @@ Key changes: Class 'Bin' was removed.
 List of functions:
 1. run_replicates (simulates n runs of the experiment)
 2. run_simulation (one run that builds the starting colony)
-3. apply_dose (applies a given antibiotic dosage and survival outcomes are determined by rules)
+3. get_dose (applies a given antibiotic dosage and survival outcomes are determined by rules)
 4. growth_step (simulates one growth step and handles division after dosage)
 5. count_update (updates cell counts after each dose and growth step)
 6. mutation_uptake (allocates mutations to cells individually)
