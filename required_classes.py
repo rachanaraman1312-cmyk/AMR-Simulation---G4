@@ -25,17 +25,13 @@ class Antibiotic:
     """
     
 class DosingSchedule:
-    """
+    """How the antibiotic dose changes over time.
+
     Attributes:
-        type (str): "fixed", "incremental" or "pulsed".
-        level (float): The dose (fixed), or the full dose at each pulse
-            (pulsed).
-        start (float): Starting dose (incremental only).
-        increase (float): Amount added per step (incremental only).
-        max (float): Upper limit on the dose (incremental only).
-        interval (int): Steps between pulses (pulsed only).
-        decay (float): Fraction of the dose left after each step (pulsed
-            only).
+        initial_dose (float): Dose given first.
+        pct_increase (float): Percentage added to the dose at each
+            increase, e.g. 10 means each dose is 10% higher than the last.
+        max (float): Optional upper limit on the dose.
     """
 
 class Cell:
