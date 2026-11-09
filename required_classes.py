@@ -33,7 +33,21 @@ class Antibiotic:
         high_dose_threshold (float): Dose above which moderately resistant
             cells die.
     """
-    
+    def __init__(self, name, drug_class, mic, high_dose_threshold):
+        self.name = name 
+        self.drug_class = drug_class
+        if mic <= 0:
+            raise ValueError("MIC must be positive")
+        if high_dose_threshold <= mic:
+            raise ValueError("high dose threshold should exceed MIC")
+        self.mic = mic
+        self.high_dose_threshold = high_dose_threshold
+
+    def inhibits_sensitive_cells(self, dose) 
+     #checks if the current dose is above or below the MIC 
+     #this should help guide division 
+        return dose >= self.mic 
+
 class DosingSchedule:
     """consider that the antibiotic dose rises over time.
 
@@ -46,6 +60,16 @@ class DosingSchedule:
         max_dose (float | None): Optional upper limit on the dose.
     """
 
+    if initial_dose <= 0 :
+        raise ValueError("Initial dose cannot be less than or equal to zero")
+    if pct_increase < 0:
+        raise ValueError("For this program, percentage increase has to be positive")
+    if max_dose is not None and max_dose < initial_dose:
+        raise ValueError("maximum dosage cannot be less than the initial dosage)
+    self.initial_dose = initial_dose
+    self.pct_increase = pct_increase
+    self.max_dose = max_dose 
+    
 class Cell:
     """A single bacterial cell. Cells do not move.
 
