@@ -2,7 +2,7 @@
 
 # Antibiotic Resistance Evolution Simulator
 
-> **Status: in development.** The design below is final for this checkpoint, but the functions are not implemented yet. Everything under "Planned" describes intended behavior.
+> **Status: in development.** The design below is final for this checkpoint, however, the functions are not implemented yet. Everything under "Planned" describes the intended outcomes
 
 A simulation of how a bacterial population develops resistance under antibiotic treatment where each cell is tracked as its own object. 
 A run alternates antibiotic doses with growth steps; and survival and mutation are resolved cell by cell.
