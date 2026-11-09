@@ -17,3 +17,13 @@ def dose_sweep(doses: list, n: int, params: SimulationParams, antibiotic: Antibi
         Dict mapping each dose to its list of RunResult objects. This is
         what output_3 reads as dose_results.
     """
+
+    #initialize the dictionary 
+    results = {}
+
+    #calculate the dose for each run and store it in the dictionary 
+    for dose in doses:
+        schedule = DosingSchedule(initial_dose = dose, pct_increase)
+        results[dose] = run_replicates(n, schedule, params, antibiotic)
+    return results 
+    
