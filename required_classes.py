@@ -59,17 +59,34 @@ class DosingSchedule:
             dose is 10% higher than the one before.
         max_dose (float | None): Optional upper limit on the dose.
     """
+    def __init__(initial_dose, pct_increase, max_dose=None):
+    #intitial checkpoints 
+        if initial_dose <= 0 :
+            raise ValueError("Initial dose cannot be less than or equal to zero")
+        if pct_increase < 0:
+            raise ValueError("For this program, percentage increase has to be positive")
+        if max_dose is not None and max_dose < initial_dose:
+            raise ValueError("maximum dosage cannot be less than the initial dosage)
+                             
+    #initializing the attributes 
+        self.initial_dose = initial_dose
+        self.pct_increase = pct_increase
+        self.max_dose = max_dose 
 
-    if initial_dose <= 0 :
-        raise ValueError("Initial dose cannot be less than or equal to zero")
-    if pct_increase < 0:
-        raise ValueError("For this program, percentage increase has to be positive")
-    if max_dose is not None and max_dose < initial_dose:
-        raise ValueError("maximum dosage cannot be less than the initial dosage)
-    self.initial_dose = initial_dose
-    self.pct_increase = pct_increase
-    self.max_dose = max_dose 
-    
+    def dose_at(self, step):
+        #calculates dose at a given step 
+        if step < 0:
+            raise ValueError("step cannot be negative")
+        dose = self.initial_dose * (1 + (self.pct_increase / 100)) * step
+        #if the calculated dose is greater than max_dose (if given), we need to select max_dose 
+        if self.max_dose is not None:
+            dose = min(dose, self.max_dose)
+        return dose 
+
+    def doses(self, n_steps):
+        #list of all doses for n steps 
+        return [self.dose_at(step) for step in range(n_steps)]
+        
 class Cell:
     """A single bacterial cell. Cells do not move.
 
